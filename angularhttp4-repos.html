@@ -1,0 +1,28 @@
+<div id = "userRepos" class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{{username}} Repositories</div>
+   <div class="form-group">
+     <input type="text" class="form-control" placeholder="Search" ng-model = "language"> </input>
+   </div>
+   <button type="submit" class="btn btn-default">search language type</button>
+
+   <!-- RepositoriesTable -->
+   <table class="table">
+     <thead>
+       <tr>
+         <th>#</th>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Language</th>
+       </tr>
+    </thead>
+      <tbody>
+        <tr ng-repeat = "repo in repos | filter: language">
+          <th scope="row"></th>
+          <td>{{repo.name}}</td>
+          <td>{{repo.description}}</td>
+          <td>{{repo.language}}</td>
+        </tr>
+      </tbody>
+      </table>
+</div>

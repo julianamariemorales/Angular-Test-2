@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+
+   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>AngularJS Directives</title>
+   </head>
+
+   <body>
+      <h1>Sample Application</h1>
+
+      <!--
+      <div class =  "1" ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]">
+         <p>Enter your Name: <input type = "text" ng-model = "name"></p>
+         <p>Hello <span ng-bind = "name"></span>!</p>
+         <p>List of Countries with locale:</p>
+
+         <ol>
+            <li ng-repeat = "country in countries">
+               {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+            </li>
+         </ol>
+      </div>
+    -->
+
+      <div ng-app = "mainApp" ng-controller = "studentController">
+        Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
+        Enter last name: <input type = "text" ng-model = "student.lastName"><br>
+        <br>
+
+        <p ng-animate = "slide"> You are entering: {{student.fullName()}} </p>
+     </div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"> </script>
+     <script>
+        var mainApp = angular.module("mainApp", []);
+
+        mainApp.controller('studentController', function($scope) {
+           $scope.student = {
+              firstName: "jules",
+              lastName: "morales",
+
+              fullName: function() {
+                 var studentObject;
+                 studentObject = $scope.student;
+                 return studentObject.firstName + " " + studentObject.lastName;
+              }
+           };
+        });
+     </script>
+   </body>
+</html>

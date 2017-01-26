@@ -1,0 +1,76 @@
+<html ng-app = "anghttp5">
+
+   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <title>JULES ANGULAR HTTP</title>
+
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
+    </head>
+
+   <body ng-controller = "MainController">
+
+     {{ countdown }}
+     <form name ="searchUser" class="navbar-form navbar-left" role="search" ng-submit = "search(username)">
+       <div class="form-group">
+         <input type="search" class="form-control" required placeholder="Username to Find" ng-model = "username">
+
+      </div>
+      <input type="submit" class="btn btn-default" value="Search" ></input>
+    </form>
+
+     <div class="page-header">
+       <h1>Hello, Angular<small> some tests by jules</small></h1>
+     </div>
+
+     <div class="panel panel-default">
+       <div class="panel-heading">Github User Info</div>
+       <div class="panel-body">
+
+         <div class={{message}} role="alert">
+           <span class="sr-only">Success:</span>
+           {{success}}
+           <span class="sr-only">Error:</span>
+           {{error}}
+         </div>
+
+         Name: {{user.name}}
+         <br>
+         Location: {{user.location}}
+         <br>
+         Code Repositories: {{user.public_repos}}
+         <br>
+
+         <div>
+           <img ng-src = "{{user.avatar_url}}" title = "{{user.name}}">
+         </div>
+
+         <br>
+
+
+       </div>
+
+     </div>
+
+     <div ng-include = "'angularhttp4-repos.html'" ng-show = "user"> </div>
+
+
+      <!-- angular and model -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      <script src="js/angularhttp5.js"></script>
+
+      <!--bootstrap-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+              integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+              crossorigin="anonymous"></script>
+
+
+   </body>
+</html>

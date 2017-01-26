@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.1/ui-bootstrap.min.js"> </script>
+  </head>
+
+   <body ng-app = "app">
+
+     <div class="btn-group" data-toggle="buttons">
+
+     <label class="btn btn-primary" ng-model="bigData.breakfast" btn-checkbox>
+       Breakfast
+     </label>
+
+     <label class="btn btn-primary" ng-model="bigData.lunch" btn-checkbox>
+       Lunch
+     </label>
+
+     <label class="btn btn-primary" ng-model="bigData.dinner" btn-checkbox>
+       Dinner
+     </label>
+
+ </div>
+
+
+      <script>
+         angular.module("myapp", [])
+
+         .controller("HelloController", function($scope) {
+            $scope.helloTo = {};
+            $scope.helloTo.title = "Juliana";
+         });
+
+         // create our angular app and inject ui.bootstrap
+         angular.module('app', ['ui.bootstrap'])
+
+         .controller('mainController', function($scope) {
+
+           // BUTTONS ======================
+
+           // define some random object and button values
+           $scope.bigData = {};
+
+           $scope.bigData.breakfast = false;
+           $scope.bigData.lunch = false;
+           $scope.bigData.dinner = false;
+
+           // COLLAPSE =====================
+           $scope.isCollapsed = false;
+
+         });
+
+
+      </script>
+
+   </body>
+</html>
